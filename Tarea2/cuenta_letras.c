@@ -1,5 +1,5 @@
-#include <stdio.h>
 
+#include <stdio.h>
 int main(void){
     int c,i=0;
     printf("Introduce un texto para contar caracteres.\n");
