@@ -1,5 +1,5 @@
-#include<stdio.h>
 
+#include<stdio.h>
 int longitud_string(char *s){
     int i=0;
     while(*s != '\0'){

@@ -1,4 +1,3 @@
-
 //arreglo2d:
 typedef struct{
 int m, n;

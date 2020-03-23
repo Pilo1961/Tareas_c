@@ -4,12 +4,13 @@
 int max;
 char linea[MAXLINEA];
 char linea_max[MAXLINEA];
-
+ 
 /*Prototipo de funciones:*/
-int obtenlinea(void);
+ 
+int obtenlinea(void); 
 void copia(void);
 void voltea(int longitud);
-
+ 
 /*imprime la línea con tamaño más grande*/
 int main(void){
     int longitud;
@@ -18,48 +19,32 @@ int main(void){
     max=0;
     while((longitud = obtenlinea()) > 0){
         if( longitud > max){
-          max = longitud;
-          copia();
-          }
-
-        // imprime todas las lineas que cumplen la condicion de tener mas de 80 caracteres
-        if( longitud > 60){
-            printf("Linea mayor de 60 \n");
-            printf("%s \n",linea);
-            //copia();
+            max = longitud;
+            copia();
         }
-
-        // imprime lineas volteadas
         voltea(longitud);
-
-    }//cierra el while
+        
+    }
     if(max > 0)
-        printf("linea mas larga: \n %s \n", linea_max);
+        printf("linea max: %s", linea_max);
 return 0;
 }
-
+ 
 /*obtenlinea: lee una linea en el arreglo linea, regresa longitud*/
 int obtenlinea(void){
     int c;
-    int i,j=0;
+    int i;
     extern char linea[];
-    for(i=0; i < MAXLINEA-1 && (c=getchar())!=EOF && c!= '\n'; i++){
-      // condicion para remover espacios en blanco
-        if (c!=' '){
-            linea[j] = c;
-            j++;
-        }
-      //linea[i] = c;
-    }
-
+    for(i=0; i < MAXLINEA-1 && (c=getchar())!=EOF && c!= '\n'; i++)
+        linea[i] = c;
     if(c == '\n'){
-        linea[j] = c;
-        j++;
+        linea[i] = c;
+        i++;
     }
-    linea[j]='\0'; //este caracter es necesario para almacenar strings
-    return j;
+    linea[i]='\0'; //este caracter es necesario para almacenar strings
+    return i;
 }
-
+ 
 /*copia: copia del arreglo "linea" al arreglo "linea_max"*/
 void copia(void){
     char *i,*j;
@@ -81,5 +66,5 @@ void voltea(int longitud){
         linea_volteada[longitud-i-1]=linea[i];
     }
     linea_volteada[longitud+1]='\0';
-    printf("%s \n",linea_volteada);
+    printf("%s",linea_volteada);
 }
