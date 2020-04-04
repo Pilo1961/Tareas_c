@@ -1,3 +1,9 @@
+# Muy bien Juan Pablo, gracias por la entrega estuvo muy bien
+
+# Hice un issue, es muy pequeño el fix. Resuélvelo y tienes los 2 puntos de la participación.
+
+# Saludos
+
 # Tareas_c
 Repostorio para presentar las tareas de c de análisis numérico y optimización 
 
