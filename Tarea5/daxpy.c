@@ -7,7 +7,6 @@
 extern double daxpy_(int *n, double *da, double *x, int *incx, double *y, int *incy);
 int main(int argc, char *argv[]){
 	arreglo_1d_T v1, v2;
-	double resultado;
 	int incx=1;
 	int N=atoi(argv[1]);
   double alpha=atoi(argv[2]);
@@ -31,9 +30,9 @@ int main(int argc, char *argv[]){
 	imprime_vector(v2);
 	printf("------------\n");
 
-	resultado=daxpy_(&N, &alpha, entradas_vector(v1), &incx, entradas_vector(v2), &incx);
-	printf("resultado: %lf\n", resultado);
-	free(entradas_vector(v1));
+	daxpy_(&N, &alpha, entradas_vector(v1), &incx, entradas_vector(v2), &incx);
+	imprime_vector(v2);
+    free(entradas_vector(v1));
 	free(v1);
 	free(entradas_vector(v2));
 	free(v2);
